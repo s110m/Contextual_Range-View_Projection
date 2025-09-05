@@ -1,8 +1,8 @@
-# Improved 2D Range-View Projection of 3D LiDAR Point Clouds
+# Beyond Depth: Enhanced Range-View Projection for 3D LiDAR Point Clouds
 
 This repository contains the code, data processing scripts, and supplementary material for our paper:
 
-**Improved 2D Range-View Projection of 3D LiDAR Point Clouds**  
+**Beyond Depth: Enhanced Range-View Projection for 3D LiDAR Point Clouds**  
 *Seyedali Mousavi, Seyedhamidreza Mousavi, Masoud Daneshtalab*  
 Mälardalen University
 
