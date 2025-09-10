@@ -20,7 +20,10 @@ In this work, we propose two improvements to the projection stage:
 - **Class-Weighted-Aware Projection (CWAP)**  
   Assigns weights to semantic classes, allowing task-relevant categories to be emphasized while background (“stuff”) can be down-weighted.  
 
-These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+1.8% mIoU** on instance-level classes.
+These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+2.1% mIoU** on instance-level classes.
+
+
+![Placeholder for Method Illustration](images/placeholder.png)
 
 ---
 
