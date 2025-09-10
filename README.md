@@ -23,7 +23,12 @@ In this work, we propose two improvements to the projection stage:
 These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+2.1% mIoU** on instance-level classes.
 
 
-![](contexual_range_image.png)
+![Effect of Centerness-Aware projection on range image formation. 
+The top image shows the result of the proposed centerness-aware projection, 
+the middle image depicts the standard depth-based projection, 
+and the bottom image highlights the differences between the two. 
+White pixels indicate unlabeled regions, black pixels correspond to areas with no projected points, 
+and light blue pixels represent car points.](contexual_range_image.png)
 
 ---
 
