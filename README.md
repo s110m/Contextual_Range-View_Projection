@@ -1,8 +1,8 @@
-# Beyond Depth: Enhanced Range-View Projection for 3D LiDAR Point Clouds
+# Contextual Range-View Projection for 3D LiDAR Point Clouds
 
 This repository contains the code, data processing scripts, and supplementary material for our paper:
 
-**Beyond Depth: Enhanced Range-View Projection for 3D LiDAR Point Clouds**  
+**Contextual Range-View Projection for 3D LiDAR Point Clouds**  
 *Seyedali Mousavi, Seyedhamidreza Mousavi, Masoud Daneshtalab*  
 Mälardalen University
 
@@ -14,7 +14,7 @@ However, a key challenge is the **many-to-one conflict**, where multiple 3D poin
 
 In this work, we propose two improvements to the projection stage:
 
-- **Centerness-Aware Projection**  
+- **Centerness-Aware Projection (CAP)**  
   Prioritizes points closer to the geometric center of object instances (“things” such as cars, bicycles, pedestrians) over boundary or noisy points.  
 
 - **Class-Aware Projection**  
