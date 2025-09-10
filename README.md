@@ -17,7 +17,7 @@ In this work, we propose two improvements to the projection stage:
 - **Centerness-Aware Projection (CAP)**  
   Prioritizes points closer to the geometric center of object instances (“things” such as cars, bicycles, pedestrians) over boundary or noisy points.  
 
-- **Class-Aware Projection**  
+- **Class-Weighted-Aware Projection (CWAP)**  
   Assigns weights to semantic classes, allowing task-relevant categories to be emphasized while background (“stuff”) can be down-weighted.  
 
 These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+1.8% mIoU** on instance-level classes.
