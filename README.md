@@ -23,7 +23,7 @@ In this work, we propose two improvements to the projection stage:
 These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+2.1% mIoU** on instance-level classes.
 
 
-![Placeholder for Method Illustration](images/placeholder.png)
+![](contexual_range_image.png)
 
 ---
 
