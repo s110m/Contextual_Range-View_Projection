@@ -1,0 +1,1 @@
+python compare.py --sequence 00 --dataset kitti_dataset/dataset --labels labels labels
