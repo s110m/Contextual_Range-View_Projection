@@ -22,7 +22,7 @@ On SemanticKITTI, these refinements improve instance-level segmentation by up to
 1. Download [SemanticKITTI](http://www.semantic-kitti.org/) and place it under:
 ```
 
-kitti\_dataset/dataset/sequences/
+kitti_dataset/dataset/sequences/
 
 ````
 2. Install requirements:
@@ -73,25 +73,6 @@ Here:
 ├── kitti_dataset/dataset/  # Place SemanticKITTI here
 ├── compare.py              # Main script
 ├── create_centers.py       # Generate centerness scores
-├── generate_weights.py     # Generate weights
-└── contexual_range_image.png
+└── generate_weights.py     # Generate weights
 ```
 
----
-
-## Citation
-
-```bibtex
-@misc{mousavi2025contextual,
-  title={Contextual Range-View Projection for 3D LiDAR Point Clouds},
-  author={Mousavi, Seyedali and Mousavi, Seyedhamidreza and Daneshtalab, Masoud},
-  year={2025}
-}
-```
-
-```
-
----
-
-Would you like me to also add a **small “Example Result” image section** at the end (with your `contexual_range_image.png`) so the README looks more attractive on GitHub?
-```
