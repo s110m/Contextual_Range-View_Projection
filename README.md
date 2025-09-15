@@ -17,7 +17,7 @@ Range-view projection converts LiDAR point clouds into 2D images, but the standa
 On SemanticKITTI, these refinements improve instance-level segmentation by up to **+3.1% mIoU**.
 
 <p align="center">
-  <img src="images/final_paper.pdf" alt="CAP vs. depth projection" width="820">
+  <img src="images/final_paper.png" alt="CAP vs. depth projection" width="820">
   <br>
   <em>Figure 1. Effect of Centerness-Aware Projection (CAP) vs. standard depth-based projection on range image formation.</em>
 </p>
