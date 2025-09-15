@@ -14,7 +14,7 @@ Range-view projection converts LiDAR point clouds into 2D images, but the standa
 - **Centerness-Aware Projection (CAP):** favors points near object centers.  
 - **Class-Weighted Projection (CWAP):** emphasizes or down-weights semantic classes.  
 
-On SemanticKITTI, these refinements improve instance-level segmentation by up to **+2.1% mIoU**.
+On SemanticKITTI, these refinements improve instance-level segmentation by up to **+3.1% mIoU**.
 
 <p align="center">
   <img src="images/contexual_range_image.png" alt="CAP vs. depth projection" width="820">
