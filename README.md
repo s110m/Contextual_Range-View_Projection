@@ -9,7 +9,7 @@ Mälardalen University
 ---
 
 ## Overview
-Range-view projection converts LiDAR point clouds into 2D images, but the standard depth-based approach keeps only the closest point, often losing object structure. We introduce two simple extensions:
+Range-view projection converts LiDAR point clouds into 2D images, but the standard depth-based approach keeps only the closest point, often losing object structure. We introduce two extensions:
 
 - **Centerness-Aware Projection (CAP):** favors points near object centers.  
 - **Class-Weighted Projection (CWAP):** emphasizes or down-weights semantic classes.  
