@@ -1,6 +1,6 @@
 # Contextual Range-View Projection for 3D LiDAR Point Clouds
 
-This repository contains the code, data processing scripts, and supplementary material for our paper:
+Code and scripts for the paper:
 
 **Contextual Range-View Projection for 3D LiDAR Point Clouds**  
 *Seyedali Mousavi, Seyedhamidreza Mousavi, Masoud Daneshtalab*  
@@ -8,32 +8,77 @@ Mälardalen University
 
 ---
 
-## 📖 Overview
-Range-view projection converts 3D LiDAR point clouds into 2D image-like representations, enabling efficient processing with 2D CNNs.  
-However, a key challenge is the **many-to-one conflict**, where multiple 3D points are mapped to the same pixel. Standard approaches simply keep the closest point (smallest depth), which ignores object structure and semantic relevance.
+## Overview
+Range-view projection converts LiDAR point clouds into 2D images, but the standard depth-based approach keeps only the closest point, often losing object structure. We introduce two extensions:
 
-In this work, we propose two improvements to the projection stage:
+- **Centerness-Aware Projection (CAP):** favors points near object centers.  
+- **Class-Weighted Projection (CWAP):** emphasizes or down-weights semantic classes.  
 
-- **Centerness-Aware Projection (CAP)**  
-  Prioritizes points closer to the geometric center of object instances (“things” such as cars, bicycles, pedestrians) over boundary or noisy points.  
-
-- **Class-Weighted-Aware Projection (CWAP)**  
-  Assigns weights to semantic classes, allowing task-relevant categories to be emphasized while background (“stuff”) can be down-weighted.  
-
-These strategies directly refine range-view projections while remaining compatible with existing LiDAR pipelines. On SemanticKITTI, our approach improves semantic segmentation performance by up to **+2.1% mIoU** on instance-level classes.
+On SemanticKITTI, these refinements improve instance-level segmentation by up to **+4.0% mIoU**.
 
 <p align="center">
-  <img src="images/contexual_range_image.png" alt="Contextual Range-View Projection" width="1000"/>
+  <img src="images/final_paper.png" alt="CAP vs. depth projection" width="820">
   <br>
-  <em>Figure 1: Effect of Centerness-Aware projection on range image formation. 
-The top image shows the result of the proposed centerness-aware projection, 
-the middle image depicts the standard depth-based projection, 
-and the bottom image highlights the differences between the two. 
-White pixels indicate unlabeled regions, black pixels correspond to areas with no projected points, 
-and light blue pixels represent car points..</em>
+  <em>Figure 1. Effect of Centerness-Aware Projection (CAP) vs. standard depth-based projection on range image formation.</em>
 </p>
-
 
 ---
 
-## 📂 Repository Structure
+## Setup
+1. Download [SemanticKITTI](http://www.semantic-kitti.org/) and place it under:
+```
+
+kitti_dataset/dataset/sequences/
+
+````
+2. Install requirements:
+```bash
+pip install -r requirements.txt
+````
+
+---
+
+## Usage
+
+First generate auxiliary data:
+
+```bash
+python create_centers.py
+python generate_weights.py
+```
+
+Then run comparison:
+
+```bash
+python compare.py --sequence 00 --dataset kitti_dataset/dataset --labels labels
+```
+
+Replace `00` with the desired KITTI sequence.
+
+Before running, open `compare.py` and set the following lines:
+
+```python
+scan_b = SemLaserScan(color_dict, project=True, scan_proj=True, use_center=True, use_weight=False)
+scan_a = SemLaserScan(color_dict, project=True, scan_proj=True, use_center=False, use_weight=False)
+```
+
+Here:
+
+* `scan_proj=True` → scan unfolding (False → spherical projection)
+* `use_center=True` → enable CAP
+* `use_weight=True` → enable CWAP
+* Both `False` → standard depth-based projection
+
+---
+
+## Repository
+
+```
+.
+├── auxiliary/              # Helper scripts
+├── kitti_dataset/dataset/  # Place SemanticKITTI here
+├── compare.py              # Main script
+├── create_centers.py       # Generate centerness scores
+└── generate_weights.py     # Generate weights
+```
+
