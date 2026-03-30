@@ -30,7 +30,7 @@ SEMANTICKITTI_WEIGHTS = np.array([
 
 
 def load_sequences():
-    path = 'kitti_dataset/dataset'
+    path = "C:/Neural-Networks-Files/rangevit/kitti_dataset/dataset" #'kitti_dataset/dataset'
     config_file = join(path, 'semantic-kitti.yaml')
     with open(config_file) as f:
         config = yaml.safe_load(f)

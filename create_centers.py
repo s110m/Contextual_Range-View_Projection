@@ -4,7 +4,8 @@ from os import listdir
 from os.path import join
 
 # KITTI dataset path and sequences
-path = 'kitti_dataset/dataset'
+path = "C:/Neural-Networks-Files/rangevit/kitti_dataset/dataset"
+ #'kitti_dataset/dataset'
 sequences = ['{:02d}'.format(i) for i in range(11)]
 
 covariance = np.diag(np.array([1, 1, 1]))
